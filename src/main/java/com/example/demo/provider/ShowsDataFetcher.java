@@ -23,4 +23,13 @@ public class ShowsDataFetcher {
         }
         return singerService.findByName(name);
     }
+
+    @DgsData(parentType = "Query", field = "findSameAgeSingers")
+    public List<Singer> findSameAgeSingers(@InputArgument("name") String name) {
+        if(name == null) {
+            // TODO: throw
+            //return singerService.findAll();
+        }
+        return singerService.findBySameAge(name);
+    }
 }
