@@ -6,9 +6,14 @@ type Query {
 type Singer {
     name: String
     age: Int
+    gender: Gender
     followers: [Follower]
 }
 
 type Follower {
     nick: String
+}
+
+enum Gender {
+    MALE, FEMALE
 }
