@@ -28,8 +28,7 @@ public class SingerDataFetcher {
     @DgsData(parentType = "Query", field = "singersBySameAge")
     public List<Singer> findSingersBySameAge(@InputArgument("name") String name) {
         if(StringUtils.isEmpty(name)) {
-            // TODO: throw
-            //return singerService.findAll();
+            throw new RuntimeException("");
         }
         return singerService.findBySameAge(name);
     }

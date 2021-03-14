@@ -23,14 +23,14 @@ public class SingerServiceImpl implements SingerService {
     }
 
     @Override
-    public List<Singer> findByName(String name) {
+    public List<Singer> findByName(final String name) {
         return singerRepository.findAll().stream()
                 .filter(s -> s.getName().contains(name))
                 .collect(Collectors.toList());
     }
 
     @Override
-    public List<Singer> findBySameAge(String name) {
+    public List<Singer> findBySameAge(final String name) {
 
         Optional<Singer> optionalSinger = singerRepository.findAll().stream()
                 .filter(s -> s.getName().equals(name))
