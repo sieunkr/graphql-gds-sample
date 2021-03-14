@@ -2,7 +2,7 @@ package com.example.demo.core;
 
 import java.util.List;
 
-public interface SingerUseCase {
+public interface SingerService {
     List<Singer> findAll();
     List<Singer> findByName(String name);
 

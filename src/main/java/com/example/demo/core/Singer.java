@@ -3,9 +3,14 @@ package com.example.demo.core;
 import lombok.Builder;
 import lombok.Getter;
 
+import java.util.List;
+
 @Getter
 @Builder
 public class Singer {
-    private final String name;
-    private final Integer age;
+    private String name;
+    private Integer age;
+
+    //지연로딩
+    private List<Follower> followers;
 }

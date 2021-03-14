@@ -1,9 +1,14 @@
 type Query {
-    findSingers(name: String): [Singer]
-    findSameAgeSingers(name: String): [Singer]
+    singers(name: String): [Singer]
+    singersBySameAge(name: String): [Singer]
 }
 
 type Singer {
     name: String
     age: Int
+    followers: [Follower]
+}
+
+type Follower {
+    nick: String
 }
