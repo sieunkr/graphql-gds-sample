@@ -6,5 +6,5 @@ import lombok.Getter;
 @Getter
 @Builder
 public class Follower {
-    private String nick;
+    private String nickname;
 }

@@ -12,6 +12,6 @@ public class SimpleFollowerRepository implements FollowerRepository {
 
     @Override
     public List<Follower> findFollowerForSinger(String name) {
-        return Arrays.asList(Follower.builder().nick("팬1").build());
+        return Arrays.asList(Follower.builder().nickname("팬1").build());
     }
 }

@@ -11,7 +11,7 @@ type Singer {
 }
 
 type Follower {
-    nick: String
+    nickname: String
 }
 
 enum Gender {

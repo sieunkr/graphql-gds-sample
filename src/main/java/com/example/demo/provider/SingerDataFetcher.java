@@ -40,5 +40,4 @@ public class SingerDataFetcher {
         Singer singer = dfe.getSource();
         return followerService.followersForSinger(singer.getName());
     }
-
 }
