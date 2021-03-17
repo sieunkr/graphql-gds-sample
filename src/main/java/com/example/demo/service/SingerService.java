@@ -1,8 +1,7 @@
-package com.example.demo.provider;
+package com.example.demo.service;
 
-import com.example.demo.core.Singer;
-import com.example.demo.core.SingerRepository;
-import com.example.demo.core.SingerService;
+import com.example.demo.type.Singer;
+import com.example.demo.repository.SingerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -13,23 +12,20 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class SingerServiceImpl implements SingerService {
+public class SingerService {
 
     private final SingerRepository singerRepository;
 
-    @Override
     public List<Singer> findAll() {
         return singerRepository.findAll();
     }
 
-    @Override
     public List<Singer> findByName(final String name) {
         return singerRepository.findAll().stream()
                 .filter(s -> s.getName().contains(name))
                 .collect(Collectors.toList());
     }
 
-    @Override
     public List<Singer> findBySameAge(final String name) {
 
         Optional<Singer> optionalSinger = singerRepository.findAll().stream()

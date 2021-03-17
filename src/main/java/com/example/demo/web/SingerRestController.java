@@ -1,7 +1,7 @@
 package com.example.demo.web;
 
-import com.example.demo.core.Singer;
-import com.example.demo.core.SingerService;
+import com.example.demo.service.SingerService;
+import com.example.demo.type.Singer;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;

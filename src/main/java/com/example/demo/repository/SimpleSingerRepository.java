@@ -1,9 +1,7 @@
-package com.example.demo.provider;
+package com.example.demo.repository;
 
-import com.example.demo.core.Follower;
-import com.example.demo.core.GenderCode;
-import com.example.demo.core.Singer;
-import com.example.demo.core.SingerRepository;
+import com.example.demo.type.GenderCode;
+import com.example.demo.type.Singer;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;

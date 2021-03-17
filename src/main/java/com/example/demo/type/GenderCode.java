@@ -1,4 +1,4 @@
-package com.example.demo.core;
+package com.example.demo.type;
 
 public enum GenderCode {
     MALE, FEMALE

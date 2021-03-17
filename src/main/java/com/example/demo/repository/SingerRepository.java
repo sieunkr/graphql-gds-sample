@@ -1,4 +1,6 @@
-package com.example.demo.core;
+package com.example.demo.repository;
+
+import com.example.demo.type.Singer;
 
 import java.util.List;
 import java.util.Map;

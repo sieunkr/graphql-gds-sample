@@ -1,6 +1,11 @@
-package com.example.demo.provider;
+package com.example.demo.fetcher;
 
-import com.example.demo.core.*;
+import com.example.demo.repository.FollowerRepository;
+import com.example.demo.repository.SingerRepository;
+import com.example.demo.service.FollowerService;
+import com.example.demo.service.SingerService;
+import com.example.demo.type.GenderCode;
+import com.example.demo.type.Singer;
 import com.netflix.graphql.dgs.DgsQueryExecutor;
 import com.netflix.graphql.dgs.autoconfig.DgsAutoConfiguration;
 import org.junit.jupiter.api.DisplayName;
@@ -15,7 +20,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.BDDMockito.given;
 
-@SpringBootTest(classes = {DgsAutoConfiguration.class, SingerDataFetcher.class, SingerServiceImpl.class, FollowerServiceImpl.class})
+@SpringBootTest(classes = {DgsAutoConfiguration.class, SingerDataFetcher.class, SingerService.class, FollowerService.class})
 class SingerDataFetcherTest {
 
     @Autowired

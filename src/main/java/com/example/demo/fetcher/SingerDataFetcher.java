@@ -1,6 +1,9 @@
-package com.example.demo.provider;
+package com.example.demo.fetcher;
 
-import com.example.demo.core.*;
+import com.example.demo.service.FollowerService;
+import com.example.demo.service.SingerService;
+import com.example.demo.type.Follower;
+import com.example.demo.type.Singer;
 import com.netflix.graphql.dgs.DgsComponent;
 import com.netflix.graphql.dgs.DgsData;
 import com.netflix.graphql.dgs.DgsDataFetchingEnvironment;

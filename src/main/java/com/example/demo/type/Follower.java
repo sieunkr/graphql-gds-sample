@@ -1,4 +1,4 @@
-package com.example.demo.core;
+package com.example.demo.type;
 
 import lombok.Builder;
 import lombok.Getter;

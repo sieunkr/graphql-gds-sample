@@ -1,9 +1,7 @@
-package com.example.demo.core;
+package com.example.demo.type;
 
 import lombok.Builder;
 import lombok.Getter;
-
-import java.util.List;
 
 @Getter
 @Builder
@@ -14,5 +12,5 @@ public class Singer {
     private GenderCode gender;
 
     //지연로딩
-    private List<Follower> followers;
+    //private List<Follower> followers;
 }

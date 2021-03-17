@@ -1,7 +1,6 @@
-package com.example.demo.provider;
+package com.example.demo.repository;
 
-import com.example.demo.core.Follower;
-import com.example.demo.core.FollowerRepository;
+import com.example.demo.type.Follower;
 import org.springframework.stereotype.Repository;
 
 import java.util.Arrays;
