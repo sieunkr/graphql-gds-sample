@@ -20,19 +20,13 @@ public class SingerService {
         return singerRepository.findAll();
     }
 
-    public List<Singer> findByName(final String name) {
-        return singerRepository.findAll().stream()
-                .filter(s -> s.getName().contains(name))
-                .collect(Collectors.toList());
+    public Optional<Singer> findByName(final String name) {
+        return singerRepository.findByName(name);
     }
 
     public List<Singer> findBySameAge(final String name) {
 
-        Optional<Singer> optionalSinger = singerRepository.findAll().stream()
-                .filter(s -> s.getName().equals(name))
-                .findFirst();
-
-        return optionalSinger.map(targetSinger -> singerRepository.findAll().stream()
+        return findByName(name).map(targetSinger -> singerRepository.findAll().stream()
                 .filter(singer -> singer.getAge().equals(targetSinger.getAge()))
                 .collect(Collectors.toList())
         ).orElse(Collections.emptyList());

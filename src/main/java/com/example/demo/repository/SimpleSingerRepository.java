@@ -19,17 +19,24 @@ public class SimpleSingerRepository implements SingerRepository {
         singerList = List.of(
                 Singer.builder()
                         .name("아이유")
-                        .age(1993)
+                        .age(29)
                         .gender(GenderCode.FEMALE)
-                        //.followers(Arrays.asList(Follower.builder().nick("팬1").build()))
                         .build(),
                 Singer.builder()
                         .name("피오")
+                        .age(29)
                         .gender(GenderCode.MALE)
-                        .age(1993)
                         .build(),
-                Singer.builder().name("백아연").age(1993).build(),
-                Singer.builder().name("지수").age(1995).build()
+                Singer.builder()
+                        .name("백아연")
+                        .age(29)
+                        .gender(GenderCode.FEMALE)
+                        .build(),
+                Singer.builder()
+                        .name("지수")
+                        .age(27)
+                        .gender(GenderCode.FEMALE)
+                        .build()
         );
     }
 
@@ -39,7 +46,7 @@ public class SimpleSingerRepository implements SingerRepository {
     }
 
     @Override
-    public Map<String, Singer> findAllMap() {
-        return singerList.stream().collect(Collectors.toMap(Singer::getName, singer -> singer));
+    public Optional<Singer> findByName(String name) {
+        return singerList.stream().filter(s -> s.getName().contains(name)).findFirst();
     }
 }

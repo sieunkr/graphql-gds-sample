@@ -4,8 +4,9 @@ import com.example.demo.type.Singer;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 public interface SingerRepository {
     List<Singer> findAll();
-    Map<String, Singer> findAllMap();
+    Optional<Singer> findByName(String name);
 }

@@ -11,6 +11,8 @@ import com.netflix.graphql.dgs.InputArgument;
 import lombok.RequiredArgsConstructor;
 import org.springframework.util.StringUtils;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 @DgsComponent
@@ -25,7 +27,7 @@ public class SingerDataFetcher {
         if(StringUtils.isEmpty(name)) {
             return singerService.findAll();
         }
-        return singerService.findByName(name);
+        return singerService.findByName(name).map(Arrays::asList).orElseThrow();
     }
 
     @DgsData(parentType = "Query", field = "singersBySameAge")
