@@ -27,7 +27,7 @@ public class SingerDataFetcher {
         if(StringUtils.isEmpty(name)) {
             return singerService.findAll();
         }
-        return singerService.findByName(name).map(Arrays::asList).orElseThrow();
+        return singerService.findByName(name);
     }
 
     @DgsData(parentType = "Query", field = "singersBySameAge")

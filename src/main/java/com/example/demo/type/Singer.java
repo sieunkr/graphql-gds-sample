@@ -3,6 +3,8 @@ package com.example.demo.type;
 import lombok.Builder;
 import lombok.Getter;
 
+import java.util.List;
+
 @Getter
 @Builder
 public class Singer {
@@ -11,6 +13,5 @@ public class Singer {
     private Integer age;
     private GenderCode gender;
 
-    //지연로딩
-    //private List<Follower> followers;
 }
+

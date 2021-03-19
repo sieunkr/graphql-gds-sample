@@ -7,12 +7,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Slf4j
 @RestController
 @RequestMapping("/api/v1/singers")
 @RequiredArgsConstructor
-public class SingerRestController {
+public class SingerSearchController {
 
     private final SingerService singerService;
 
@@ -22,7 +23,7 @@ public class SingerRestController {
     }
 
     @GetMapping("/{name}")
-    public Singer getSingerByName(@PathVariable(name = "name") String name) {
-        return singerService.findByName(name).stream().findFirst().orElseThrow();
+    public List<Singer> getSingersByName(@PathVariable(name = "name") String name) {
+        return singerService.findByName(name).stream().collect(Collectors.toList());
     }
 }

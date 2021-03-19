@@ -1,6 +1,7 @@
 package com.example.demo.fetcher;
 
 import com.example.demo.repository.FollowerRepository;
+import com.example.demo.repository.SimpleSingerRepository;
 import com.example.demo.repository.SingerRepository;
 import com.example.demo.service.FollowerService;
 import com.example.demo.service.SingerService;
@@ -11,8 +12,10 @@ import com.netflix.graphql.dgs.autoconfig.DgsAutoConfiguration;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.boot.test.mock.mockito.SpyBean;
 
 import java.util.Arrays;
 import java.util.List;
@@ -32,8 +35,8 @@ class SingerDataFetcherTest {
     @Autowired
     FollowerService followerService;
 
-    @MockBean
-    SingerRepository singerRepository;
+    @SpyBean
+    SimpleSingerRepository singerRepository;
 
     @MockBean
     FollowerRepository followerRepository;
@@ -97,17 +100,24 @@ class SingerDataFetcherTest {
         return List.of(
                 Singer.builder()
                         .name("아이유")
-                        .age(1993)
+                        .age(29)
                         .gender(GenderCode.FEMALE)
-                        //.followers(Arrays.asList(Follower.builder().nick("팬1").build()))
                         .build(),
                 Singer.builder()
                         .name("피오")
+                        .age(29)
                         .gender(GenderCode.MALE)
-                        .age(1993)
                         .build(),
-                Singer.builder().name("백아연").age(1993).build(),
-                Singer.builder().name("지수").age(1995).build()
+                Singer.builder()
+                        .name("백아연")
+                        .age(29)
+                        .gender(GenderCode.FEMALE)
+                        .build(),
+                Singer.builder()
+                        .name("지수")
+                        .age(27)
+                        .gender(GenderCode.FEMALE)
+                        .build()
         );
     }
 

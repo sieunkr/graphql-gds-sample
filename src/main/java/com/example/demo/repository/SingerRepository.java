@@ -8,5 +8,5 @@ import java.util.Optional;
 
 public interface SingerRepository {
     List<Singer> findAll();
-    Optional<Singer> findByName(String name);
+    List<Singer> findByName(String name);
 }

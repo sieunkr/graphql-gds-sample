@@ -46,7 +46,7 @@ public class SimpleSingerRepository implements SingerRepository {
     }
 
     @Override
-    public Optional<Singer> findByName(String name) {
-        return singerList.stream().filter(s -> s.getName().contains(name)).findFirst();
+    public List<Singer> findByName(String name) {
+        return findAll().stream().filter(s -> s.getName().contains(name)).collect(Collectors.toList());
     }
 }
