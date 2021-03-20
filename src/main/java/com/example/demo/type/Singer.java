@@ -13,5 +13,7 @@ public class Singer {
     private Integer age;
     private GenderCode gender;
 
+    //TODO: 지연로딩 가능한지? --> DgsDataFetchingEnvironment 사용
+    //private List<Follower> followers;
 }
 

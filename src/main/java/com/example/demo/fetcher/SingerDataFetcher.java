@@ -45,3 +45,5 @@ public class SingerDataFetcher {
         return followerService.followersForSinger(singer.getName());
     }
 }
+
+
