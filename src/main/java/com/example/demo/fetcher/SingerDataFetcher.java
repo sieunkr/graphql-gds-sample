@@ -1,5 +1,6 @@
 package com.example.demo.fetcher;
 
+import com.example.demo.exception.NotFoundSingerRuntimeException;
 import com.example.demo.service.FollowerService;
 import com.example.demo.service.SingerService;
 import com.example.demo.type.Follower;
@@ -11,8 +12,6 @@ import com.netflix.graphql.dgs.InputArgument;
 import lombok.RequiredArgsConstructor;
 import org.springframework.util.StringUtils;
 
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 @DgsComponent
@@ -33,9 +32,15 @@ public class SingerDataFetcher {
     @DgsData(parentType = "Query", field = "singersBySameAge")
     public List<Singer> findSingersBySameAge(@InputArgument("name") String name) {
         if(StringUtils.isEmpty(name)) {
-            throw new RuntimeException("");
+            throw new RuntimeException();
         }
-        return singerService.findBySameAge(name);
+
+        List<Singer> singers = singerService.findBySameAge(name);
+        if(singers.isEmpty()) {
+            throw new NotFoundSingerRuntimeException();
+        }
+        return singers;
+
     }
 
     @DgsData(parentType = "Singer", field = "followers")
